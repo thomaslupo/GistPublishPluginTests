@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content"><channel><title>GistPublishPluginTests</title><description>A description of GistPublishPluginTests</description><link>https://your-website-url.com</link><language>en</language><lastBuildDate>Tue, 1 Sep 2020 13:18:46 +0200</lastBuildDate><pubDate>Tue, 1 Sep 2020 13:18:46 +0200</pubDate><ttl>250</ttl><atom:link href="https://your-website-url.com/feed.rss" rel="self" type="application/rss+xml"/><item><guid isPermaLink="true">https://your-website-url.com/posts/first-post</guid><title>My first post</title><description>A description of my first post.</description><link>https://your-website-url.com/posts/first-post</link><pubDate>Tue, 1 Sep 2020 13:15:00 +0200</pubDate><content:encoded><![CDATA[<h1>My first post</h1><p>My first post's text.</p><pre><code>// Either put this in a separate file that you only include in your macOS target
+// or wrap the code in #if os(macOS) / #endif
+
+import Cocoa
+
+// Step 1: Typealias UIImage to NSImage
+typealias UIImage = NSImage
+
+// Step 2: You might want to add these APIs that UIImage has but NSImage doesn't.
+extension NSImage {
+    var cgImage: CGImage? {
+        var proposedRect = CGRect(origin: .zero, size: size)
+
+        return cgImage(forProposedRect: &amp;proposedRect,
+                       context: nil,
+                       hints: nil)
+    }
+
+    convenience init?(named name: String) {
+        self.init(named: Name(name))
+    }
+}
+
+// Step 3: Profit - you can now make your model code that uses UIImage cross-platform!
+struct User {
+    let name: String
+    let profileImage: UIImage
+}</code></pre>]]></content:encoded></item></channel></rss>
